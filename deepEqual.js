@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 function deepEqual(obj1, obj2) {
   if (obj1 === obj2) return true; // Exact same reference or primitive
 
@@ -28,34 +28,3 @@ function deepEqual(obj1, obj2) {
 
 // example
 console.log(deepEqual({}, {}));
-=======
-function deepEqual(obj1, obj2) {
-  if (obj1 === obj2) return true; // Exact same reference or primitive
-
-  if (
-    typeof obj1 !== "object" ||
-    typeof obj2 !== "object" ||
-    obj1 == null ||
-    obj2 == null
-  ) {
-    return false;
-  }
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
-
-  if (Array.isArray(obj1) !== Array.isArray(obj2)) {
-    return false;
-  }
-
-  return keys1.every(function (key) {
-    // return obj1[key]===obj2[key]
-    return deepEqual(obj1[key], obj2[key]);
-  });
-}
-
-// example
-console.log(deepEqual({}, {}));
->>>>>>> d4793be0cc1cf5333775e27f53beb78285c4ec3f
